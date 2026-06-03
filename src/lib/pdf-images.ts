@@ -56,7 +56,10 @@ async function getImageFromObj(page: any, objId: string): Promise<PdfImageData |
 
 export async function extractRepresentationImages(buffer: Buffer, pageCount: number): Promise<ImageExtractionResult[]> {
   const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
-  const loadingTask = pdfjs.getDocument({ data: new Uint8Array(buffer) });
+  const loadingTask = pdfjs.getDocument({
+    data: new Uint8Array(buffer),
+    disableWorker: true
+  } as any);
   const pdf = await loadingTask.promise;
   const ops = pdfjs.OPS;
   const imageOps = new Set([ops.paintImageXObject, ops.paintInlineImageXObject, ops.paintImageMaskXObject]);

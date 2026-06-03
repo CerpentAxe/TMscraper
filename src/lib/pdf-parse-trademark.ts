@@ -65,7 +65,10 @@ export function extractFieldsFromRawText(rawText: string): ParsedTrademarkPdf["f
 
 async function extractTextByPages(buffer: Buffer): Promise<{ pageTexts: string[]; pageCount: number }> {
   const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
-  const loadingTask = pdfjs.getDocument({ data: new Uint8Array(buffer) });
+  const loadingTask = pdfjs.getDocument({
+    data: new Uint8Array(buffer),
+    disableWorker: true
+  } as any);
   const pdf = await loadingTask.promise;
   const pageCount = pdf.numPages;
   const lastPageToParse = Math.max(pageCount - 1, 1);
