@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/trademarks",
+      "schedule": "0 5 * * *"
+    }
+  ]
+}

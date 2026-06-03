@@ -1,0 +1,29 @@
+{
+  "name": "tmscraper",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "next": "^15.3.3",
+    "pdfjs-dist": "^4.10.38",
+    "pngjs": "^7.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@types/pngjs": "^6.0.5",
+    "typescript": "^5.8.3",
+    "vitest": "^2.1.8"
+  }
+}
